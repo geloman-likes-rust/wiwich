@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import style from '@/styles/Home.module.css'
+import Link from 'next/link'
 
 type Category = {
   id: number
@@ -23,12 +24,22 @@ export default function Home({menu}: Prop) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/pizza.svg" />
       </Head>
-      <main className={style.home}>
-        <div className={style.paper}>
-          <div className={style.image}>
-            <img src="" alt="" />
-          </div>
-          <div className={style.name}><span></span></div>
+      <main className={`${style.home}`}>
+        <div className={style.grid}>
+          {menu.map((item) => {
+            return (
+              <Link href={item.param}>
+                <div className={style.paper}>
+                  <div className={style.image}>
+                    <img src={item.img} alt={item.category} />
+                  </div>
+                  <div className={style.category}>
+                    <span>{item.category}</span>
+                  </div>
+                </div>
+              </Link>
+            )
+          })}
         </div>
       </main>
     </>
