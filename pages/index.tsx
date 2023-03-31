@@ -28,7 +28,7 @@ export default function Home({menu}: Prop) {
         <div className={style.grid}>
           {menu.map((item) => {
             return (
-              <Link href={item.param}>
+              <Link key={item.param} href={item.param}>
                 <div className={style.paper}>
                   <div className={style.image}>
                     <img src={item.img} alt={item.category} />
