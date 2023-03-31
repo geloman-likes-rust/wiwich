@@ -1,0 +1,154 @@
+.menu {
+  display: flex;
+  max-width: 1200px;
+  min-height: 100vh;
+  margin-inline: auto;
+  padding-block: 30px;
+  background: #F9F9F9;
+}
+
+.sidebar {
+  width: 300px;
+  margin-left: 30px;
+  height: 100vh;
+  outline: 3px solid #539165;
+  border-radius: 8px;
+  align-self: start;
+  position: sticky;
+  flex-shrink: 0;
+  flex-grow: 0;
+  top: 30px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 250px);
+  gap: 20px;
+  justify-content: center;
+  max-width: 1000px;
+  margin-inline: auto;
+  align-self: start;
+  user-select: none;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  user-select: none;
+  box-shadow:
+  0px 4px 15px 0px rgba(0,0,0,0.2),
+  0px 2px 20px 0px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.image {
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.image img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.details {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  justify-content: space-between;
+  position: relative;
+}
+
+
+.label {
+  letter-spacing: 1px;
+  padding-inline: 20px;
+  color: #539165;
+}
+
+.price {
+  margin-top: 15px;
+  padding-inline: 20px;
+  margin-bottom: 10px;
+  color: #2C3333;
+}
+
+.order_now {
+  background: #539165;
+  color: #2C3333;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 15px;
+}
+
+@media (max-width: 1150px) {
+  .sidebar {
+    display: none;
+  }
+}
+
+@media (max-width: 825px) {
+  .menu {
+    display: block;
+    padding-inline: 20px;
+  }
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 569px) {
+  .image {
+    height: 100px;
+  }
+}
+
+@media (max-width: 499px) {
+  .image {
+    height: 80px;
+  }
+  .label {
+    font-size: clamp(12px, 1vw, 13px);
+  }
+  .price {
+    font-size: clamp(13px, 1vw, 14px);
+  }
+  .order_now {
+    font-size: clamp(13px, 1vw, 14px);
+  }
+}
+
+@media (max-width: 350px) {
+  .grid {
+    grid-template-columns: 250px;
+  }
+
+  .image {
+    height: 100px;
+  }
+  .label {
+    font-size: 13px;
+  }
+  .price {
+    font-size: 14px;
+  }
+  .order_now {
+    font-size: 14px;
+  }
+
+}
