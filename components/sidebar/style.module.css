@@ -5,6 +5,7 @@
 
 .sidebar .item {
   position: relative;
+  background: inherit;
 }
 
 .item a {
@@ -46,43 +47,62 @@
 @media (max-width: 1150px) {
   .sidebar {
     display: flex;
-  }
-
-  /*.contents {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5px;
-  }
-
-  .contents .image {
-    display: flex;
-    justify-content: center;
-    background: white;
-    overflow: hidden;
-    border-radius: 50%;
-    height: 50px;
-    width: 50px;
     position: relative;
-    outline: 3px solid green;
   }
-
-  .image img {
-    height: 100%;
-    object-fit: cover;
+  .sidebar::-webkit-scrollbar {
+    display: none;
+  }
+  .item.active::before {
+    transform: translateX(0%);
   }
 
   .item {
     font-size: 16px;
-    text-align: center;
-    width: 100px;
-    padding-inline: 5px;
-    flex-shrink: 0;
-    flex-grow: 0;
+  }
+  .item a {
+    padding: 20px;
+  }
+  .contents {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    white-space: nowrap;
+  }
+  .contents .image {
+    display: block;
+    margin-bottom: 20px;
+    height: 64px;
+    width: 64px;
+    overflow: hidden;
+    border-radius: 50%;
+    outline: 2px solid white;
   }
 
-  .item a {
-    padding: unset;
-    padding-block: 10px;
-  }*/
+  .item.active .image {
+    outline: 3px solid #539165;
+  }
+  .contents .image img {
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+@media (max-width: 730px) {
+  .item {
+    font-size: 13px;
+  }
+  .contents .image {
+    height: 48px;
+    width: 48px;
+  }
+}
+
+@media (max-width: 550px) {
+  .item {
+    font-size: 11px;
+  }
+  .contents .image {
+    height: 36px;
+    width: 36px;
+  }
 }
