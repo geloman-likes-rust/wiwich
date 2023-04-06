@@ -10,9 +10,8 @@
 .sidebar {
   width: 300px;
   margin-left: 30px;
-  height: 100vh;
-  outline: 3px solid #539165;
   border-radius: 8px;
+  overflow: hidden;
   align-self: start;
   position: sticky;
   flex-shrink: 0;
@@ -91,14 +90,22 @@
 }
 
 @media (max-width: 1150px) {
+  .menu {
+    display: block;
+  }
+  
   .sidebar {
-    display: none;
+    display: none; /* DELETE THIS */
+    position: sticky;
+    width: unset;
+    outline: unset;
+    max-width: 500px;
+    overflow: hidden;
   }
 }
 
 @media (max-width: 825px) {
   .menu {
-    display: block;
     padding-inline: 20px;
   }
   .grid {
