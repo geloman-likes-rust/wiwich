@@ -65,6 +65,10 @@
     padding: 20px;
   }
 
+  .item a:focus {
+    outline: none;
+  }
+
   .item:hover a {
     color: #fff;
   }
