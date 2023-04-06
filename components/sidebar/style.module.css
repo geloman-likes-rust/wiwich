@@ -52,17 +52,23 @@
   .sidebar::-webkit-scrollbar {
     display: none;
   }
+
   .item.active::before {
     transform: translateX(0%);
   }
 
   .item {
     font-size: 16px;
-    pointer-events: none;
   }
+
   .item a {
     padding: 20px;
   }
+
+  .item:hover a {
+    color: #fff;
+  }
+
   .contents {
     display: flex;
     flex-direction: column;
