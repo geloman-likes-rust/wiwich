@@ -80,7 +80,9 @@
     white-space: nowrap;
   }
   .contents .image {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-bottom: 20px;
     height: 64px;
     width: 64px;
@@ -94,6 +96,8 @@
   }
   .contents .image img {
     height: 100%;
+    flex-shrink: 0;
+    flex-grow: 0;
     object-fit: cover;
   }
 }
