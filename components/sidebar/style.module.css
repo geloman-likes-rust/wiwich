@@ -49,9 +49,6 @@
     display: flex;
     position: relative;
   }
-  .sidebar::-webkit-scrollbar {
-    display: none;
-  }
 
   .item.active::before {
     transform: translateX(0%);
@@ -79,6 +76,7 @@
     align-items: center;
     white-space: nowrap;
   }
+
   .contents .image {
     display: flex;
     justify-content: center;
@@ -94,6 +92,7 @@
   .item.active .image {
     outline: 3px solid #539165;
   }
+
   .contents .image img {
     height: 100%;
     flex-shrink: 0;
@@ -106,6 +105,7 @@
   .item {
     font-size: 13px;
   }
+
   .contents .image {
     height: 48px;
     width: 48px;
@@ -116,6 +116,7 @@
   .item {
     font-size: 11px;
   }
+
   .contents .image {
     height: 36px;
     width: 36px;
