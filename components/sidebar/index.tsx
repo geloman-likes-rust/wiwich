@@ -8,11 +8,9 @@ type Category = {
   param: string
 }
 
-type Categories = Array<Category>
-
 type Props = {
-  categories: Categories
-  activeLink: string
+  categories: Array<Category>,
+  activeLink: string | string[] | undefined
 }
 
 export default function Sidebar({categories, activeLink}: Props) {
@@ -20,7 +18,7 @@ export default function Sidebar({categories, activeLink}: Props) {
     <ul className={style.sidebar}>
       {categories.map((item: Category) => {
         return (
-          <li className={`${style.item} ${activeLink === item.param ? style.active : ""}`} key={item.param}>
+          <li key={item.param} className={`${style.item} ${item.param === activeLink ? style.active : ""}`}>
             <Link href={item.param}>
               <div className={style.contents}>
                 <div className={style.image}>
