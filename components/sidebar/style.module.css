@@ -27,6 +27,10 @@
   transition: transform 200ms ease;
 }
 
+.item:hover {
+  background: rgba(0,0,0, 0.4);
+}
+
 .item:hover a {
   color: #539165;
 }
@@ -50,8 +54,20 @@
     position: relative;
   }
 
+  .item:hover {
+    background: #2C3333;
+  }
+
   .item.active::before {
     transform: translateX(0%);
+  }
+
+  .item:hover a {
+    color: #fff;
+  }
+
+  .item.active:hover a {
+    color: #539165;
   }
 
   .item {
@@ -64,10 +80,6 @@
 
   .item a:focus {
     outline: none;
-  }
-
-  .item:hover a {
-    color: #fff;
   }
 
   .contents {
