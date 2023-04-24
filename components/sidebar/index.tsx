@@ -19,7 +19,7 @@ export default function Sidebar({categories, activeLink}: Props) {
       {categories.map((item: Category) => {
         return (
           <li key={item.param} className={`${style.item} ${item.param === activeLink ? style.active : ""}`}>
-            <Link href={item.param}>
+            <Link draggable={false} href={item.param}>
               <div className={style.contents}>
                 <div className={style.image}>
                   <img src={item.img} alt={item.category} />
